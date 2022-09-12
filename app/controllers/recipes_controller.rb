@@ -12,10 +12,10 @@ class RecipesController < ApplicationController
     def create 
         user = User.find_by(username: params[:username])
         if session[:user_id]
-            recipe = user.recipes.create!(recipe_params)
+            recipe = user.recipes.create(recipe_params)
             redner json: recipe, status: :created
-        elsif
-            
+        elseif
+            #next conditional
         end
     end
 
